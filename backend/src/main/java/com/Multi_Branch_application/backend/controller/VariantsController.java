@@ -3,6 +3,7 @@ package com.Multi_Branch_application.backend.controller;
 
 import com.Multi_Branch_application.backend.dto.VariantsRequestDTO;
 import com.Multi_Branch_application.backend.entity.Variants;
+import com.Multi_Branch_application.backend.entity.Variants_type;
 import com.Multi_Branch_application.backend.service.VariantsServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -10,6 +11,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -19,9 +21,15 @@ public class VariantsController {
     @Autowired
     VariantsServices variantsServices;
 
+//    @GetMapping()
+//    @PreAuthorize("hasRole('ADMIN')")
+//    public List<Variants> getAllVariants(){return variantsServices.getAllVariants();}
+
     @GetMapping()
     @PreAuthorize("hasRole('ADMIN')")
-    public List<Variants> getAllVariants(){return variantsServices.getAllVariants();}
+    public Map<Variants_type, List<Variants>> getAllVariants() {
+        return variantsServices.getAllVariants();
+    }
 
     @PostMapping()
     @PreAuthorize("hasRole('ADMIN')")
