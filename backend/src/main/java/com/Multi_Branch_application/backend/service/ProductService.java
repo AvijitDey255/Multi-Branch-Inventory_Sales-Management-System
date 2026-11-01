@@ -29,7 +29,7 @@ public class ProductService {
         Product product = new Product();
         product.setName(productRequest.getName());
         product.setDescription(productRequest.getDescription());
-        product.setPrice(productRequest.getPrice());
+        product.setSelling_price(productRequest.getPrice());
         product.setQuantity(productRequest.getQuantity());
 
         try {
@@ -56,7 +56,7 @@ public class ProductService {
         Product product = productOpt.get();
         if (productRequest.getName() != null) product.setName(productRequest.getName());
         if (productRequest.getDescription() != null) product.setDescription(productRequest.getDescription());
-        if (productRequest.getPrice() != null) product.setPrice(productRequest.getPrice());
+        if (productRequest.getPrice() != null) product.setSelling_price(productRequest.getPrice());
         if (productRequest.getQuantity() != null) product.setQuantity(productRequest.getQuantity());
 
         try {

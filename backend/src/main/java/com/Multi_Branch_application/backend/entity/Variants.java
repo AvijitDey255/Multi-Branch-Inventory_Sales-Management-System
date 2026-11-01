@@ -16,6 +16,7 @@ public class Variants {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    @Enumerated(EnumType.STRING)
+    private Variants_type name;
     private String value;
 }

@@ -10,6 +10,8 @@ import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
+
+
 @Entity
 @Table(name = "users")
 @Data
@@ -33,8 +35,6 @@ public class User {
     @JoinColumn(name="branch_id")
     private Branch branch;
 
-//    private Boolean emailVerify = false;
-//    private String otp;
-//    private LocalDateTime otpExpiry;
+
 
 }

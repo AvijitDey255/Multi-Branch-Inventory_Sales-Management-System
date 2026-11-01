@@ -3,6 +3,7 @@ package com.Multi_Branch_application.backend.service;
 import com.Multi_Branch_application.backend.dto.MessageResponse;
 import com.Multi_Branch_application.backend.dto.VariantsRequestDTO;
 import com.Multi_Branch_application.backend.entity.Variants;
+import com.Multi_Branch_application.backend.entity.Variants_type;
 import com.Multi_Branch_application.backend.repository.VariantsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +23,7 @@ public class VariantsServices {
     public ResponseEntity<?> createVariants(VariantsRequestDTO requestDTO){
 
         Variants variants = new Variants();
-        variants.setName(requestDTO.getName());
+        variants.setName(Variants_type.valueOf(requestDTO.getName()));
         variants.setValue(requestDTO.getValue());
 
         variantsRepository.save(variants);

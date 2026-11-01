@@ -21,4 +21,5 @@ public class Category {
     private Boolean active = true;
     private String imageUrl;
     private String imageId;
+
 }
