@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -19,12 +20,18 @@ public class Product {
     private Long id;
 
     private String name;
-    private String description;
-    private Double cost;
-    private Double Selling_price;
-    private Integer quantity;
-    private String imageUrl;
-    private String imageId;
+    private Float mrp = (float) 0;
+    private Float selling_price =(float) 0;
+    private String packagingTyp = "";
+    private String volume = "";
+    private String brand = "";
+    private String units = "";
+    private String size = "";
+    private String color = "";
+    private String weight = "";
+    private Integer stock_quantity = 0;
+    private String imageUrl = "";
+    private String imageId = "";
 
     @ManyToOne
     @JoinColumn(name = "category_id")

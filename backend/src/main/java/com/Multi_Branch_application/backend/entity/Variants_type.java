@@ -5,5 +5,8 @@ public enum Variants_type {
     size,
     packagingType,
     volume,
-    other
+    other,
+    units,
+    brand,
+    weight
 }

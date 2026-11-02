@@ -1,24 +1,31 @@
 {
   "expo": {
-    "name": "Nexus Mobile",
-    "slug": "nexus-mobile",
+    "name": "Multi-Branch Inventory & Sales",
+    "slug": "multi-branch-inventory-sales",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "automatic",
+    "userInterfaceStyle": "light",
     "splash": {
-      "backgroundColor": "#0F172A"
+      "resizeMode": "contain",
+      "backgroundColor": "#1e293b"
     },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#0F172A"
+        "backgroundColor": "#1e293b"
       }
     },
     "web": {
-      "bundler": "metro"
-    }
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-status-bar"
+    ]
   }
 }
