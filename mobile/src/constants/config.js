@@ -20,8 +20,16 @@ export const API_ENDPOINTS = {
   STOCKS: 'stocks',
 
   // Branches
-  BRANCHES: 'branches',
-  BRANCH_BY_ID: (id) => `branches/${id}`,
+  BRANCHS: 'branchs',
+  BRANCH_REGISTER: 'branchs/register',
+  BRANCH_BY_ID: (id) => `branchs/${id}`,
+  BRANCH_ASSIGN_MANAGER: (branchId, managerId) => `branchs/${branchId}/assign-manager/${managerId}`,
+  BRANCH_ASSIGN_CATEGORIES: (branchId) => `branchs/${branchId}/assign-categories`,
+  BRANCHES: 'branchs',
+
+  // Managers
+  MANAGERS: 'managers',
+  MANAGER_BY_ID: (id) => `managers/${id}`,
 
   // Orders & Sales
   ORDERS: 'orders',
@@ -40,4 +48,3 @@ export const STORAGE_KEYS = {
   USER_DATA: '@auth_user',
   THEME_MODE: '@app_theme_mode',
 };
-

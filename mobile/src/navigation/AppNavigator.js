@@ -11,6 +11,8 @@ import RoleTabNavigator from './RoleTabNavigator';
 import ProfileScreen from '../screens/shared/ProfileScreen';
 import CategoryScreen from '../screens/admin/CategoryScreen';
 import VariantsScreen from '../screens/admin/VariantsScreen';
+import BranchScreen from '../screens/admin/BranchScreen';
+import ManagerScreen from '../screens/admin/ManagerScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -54,6 +56,26 @@ const AppNavigator = () => {
           <Stack.Screen
             name="Variants"
             component={VariantsScreen}
+            options={{ animation: 'slide_from_right' }}
+          />
+          <Stack.Screen
+            name="Branch"
+            component={BranchScreen}
+            options={{ animation: 'slide_from_right' }}
+          />
+          <Stack.Screen
+            name="Branches"
+            component={BranchScreen}
+            options={{ animation: 'slide_from_right' }}
+          />
+          <Stack.Screen
+            name="Manager"
+            component={ManagerScreen}
+            options={{ animation: 'slide_from_right' }}
+          />
+          <Stack.Screen
+            name="Managers"
+            component={ManagerScreen}
             options={{ animation: 'slide_from_right' }}
           />
         </>

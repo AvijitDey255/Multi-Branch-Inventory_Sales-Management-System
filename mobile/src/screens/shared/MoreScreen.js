@@ -57,8 +57,22 @@ const MoreScreen = () => {
   // ================= ADMIN NAVIGATION ITEMS =================
   // manager, branch, products, category, variants, busness, setting, profile
   const ADMIN_SHORTCUTS = [
-    { id: 'manager', label: 'Manager', icon: 'people', color: '#6366F1', bg: isDark ? '#1E1B4B' : '#EEF2FF', action: () => setActiveModal('manager') },
-    { id: 'branch', label: 'Branch', icon: 'business', color: '#0D9488', bg: isDark ? '#134E4A' : '#F0FDFA', action: () => setActiveModal('branch') },
+    {
+      id: 'manager',
+      label: 'Manager',
+      icon: 'people',
+      color: '#6366F1',
+      bg: isDark ? '#1E1B4B' : '#EEF2FF',
+      action: () => navigation.navigate('Manager'),
+    },
+    {
+      id: 'branch',
+      label: 'Branch',
+      icon: 'business',
+      color: '#0D9488',
+      bg: isDark ? '#134E4A' : '#F0FDFA',
+      action: () => navigation.navigate('Branch'),
+    },
     {
       id: 'products',
       label: 'Products',
