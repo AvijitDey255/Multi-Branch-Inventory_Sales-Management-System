@@ -56,8 +56,8 @@ public class WebSecurityConfig {
             .csrf(AbstractHttpConfigurer::disable)
             .exceptionHandling(exception -> exception.authenticationEntryPoint(unauthorizedHandler))
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-            .authorizeHttpRequests(auth -> 
-                auth.requestMatchers("/api/auth/**", "/api/demo-seed/**").permitAll()
+            .authorizeHttpRequests(auth ->
+                auth.requestMatchers("/api/auth/**", "/api/demo-seed/**", "/error").permitAll()
                     .anyRequest().authenticated()
             );
         

@@ -75,6 +75,23 @@ public class JwtUtils {
                .parseClaimsJws(token).getBody().getSubject();
     }
 
+    public String generateTokenFromUsername(String username) {
+    return Jwts.builder()
+            .setSubject(username)
+            .setIssuedAt(new Date())
+            .setExpiration(new Date((new Date()).getTime() + jwtExpirationMs))
+            .signWith(key(), SignatureAlgorithm.HS256)
+            .compact();
+}
+
+public ResponseCookie generateCookieFromToken(String jwt) {
+    return ResponseCookie.from(jwtCookie, jwt)
+            .path("/api")
+            .maxAge(jwtExpirationMs / 1000)
+            .httpOnly(true)
+            .build();
+}
+
     public boolean validateJwtToken(String authToken) {
         try {
             Jwts.parserBuilder().setSigningKey(key()).build().parse(authToken);

@@ -20,7 +20,7 @@ public class Branch {
 
     private String name;
     private String email;
-    private String phone;
+    private String mobile;
     private String address;
 
     private Boolean active = true;
@@ -28,7 +28,7 @@ public class Branch {
     // The Branch Manager
     @OneToOne
     @JoinColumn(name = "manager_id")
-    private User manager;
+    private User manager = null;
 
     // Allowed categories for this branch (e.g., Branch 1: Oil, Rice)
     @ManyToMany

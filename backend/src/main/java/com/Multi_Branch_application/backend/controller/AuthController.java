@@ -1,10 +1,13 @@
 package com.Multi_Branch_application.backend.controller;
 
+import com.Multi_Branch_application.backend.dto.CustomerLoginRequest;
+import com.Multi_Branch_application.backend.dto.CustomerOtpVerifyRequest;
 import com.Multi_Branch_application.backend.dto.LoginRequest;
 import com.Multi_Branch_application.backend.dto.MessageResponse;
 import com.Multi_Branch_application.backend.dto.OtpVerifyRequest;
 import com.Multi_Branch_application.backend.dto.SignupRequest;
 import com.Multi_Branch_application.backend.service.AuthService;
+import com.Multi_Branch_application.backend.service.CustomerServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,6 +19,9 @@ public class AuthController {
     
     @Autowired
     AuthService authService;
+
+    @Autowired
+    CustomerServices customerServices;
 
     @PostMapping("/login")
     public ResponseEntity<?> authenticateUser(@RequestBody LoginRequest loginRequest) {
@@ -40,15 +46,15 @@ public class AuthController {
         return authService.logoutUser();
     }
 
-//    @PostMapping("/signup")
-//    public ResponseEntity<?> registerUser(@RequestBody SignupRequest signUpRequest) {
-//        return authService.registerUser(signUpRequest);
-//    }
-//
-//    @PostMapping("/verify-otp")
-//    public ResponseEntity<?> verifyOtp(@RequestBody OtpVerifyRequest request) {
-//        return authService.verifyOtp(request);
-//    }
+    @PostMapping("/customer/login")
+    public ResponseEntity<?> customerLogin(@RequestBody CustomerLoginRequest loginRequest) {
+        return customerServices.sendOtp(loginRequest);
+    }
+
+    @PostMapping("/customer/verify-otp")
+    public ResponseEntity<?> customerVerifyOtp(@RequestBody CustomerOtpVerifyRequest verifyRequest) {
+        return customerServices.verifyOtp(verifyRequest);
+    }
 
 
 
